@@ -3,8 +3,32 @@ import Head from 'next/head'
 import Image from 'next/image'
 import QuizComponent from '../components/QuizComponent/QuizComponent'
 import styles from '../styles/Home.module.css'
+import { dataEn, dataFr } from '../components/QuizComponent/data';
+import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
+
+    // i18n
+    const router = useRouter();
+    let {locale} = router;
+
+    let toggle = locale === "en-US" ? dataEn: dataFr;
+
+    const handleLanguage = () => {
+        switch (locale) {
+            case "en-US": {
+                router.push("/fr", "/fr", {locale: "en-US"});
+                break;
+            }
+            case "fr":{
+                router.push("/en-US", "/en-US", {locale: "fr"});
+                break;
+            }
+        }
+
+    };
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,7 +38,18 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <QuizComponent/>
+        {/* Select language */}
+        <div className={styles.languageContainer}>
+            <div>
+                Language: {locale === 'fr' ? 'French': 'English'}
+            </div>
+            <div className={styles.languageChange} onClick={handleLanguage}>
+                Change
+            </div>
+        </div>
+        <div>
+          <QuizComponent toggle={toggle}/>
+        </div>
       </main>
     </div>
   )

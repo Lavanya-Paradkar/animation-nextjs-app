@@ -4,12 +4,11 @@ import styles from './Cards.module.css';
 interface props {
     data: any;
     questionNumber:number;
-    setQuestionNumber:any;
 }
 
-export const Cards = ({data, questionNumber, setQuestionNumber}: props) => {
+export const Cards = ({data, questionNumber}: props) => {
 
-    const [questions, setQuestions] = useState(null);
+    const [questions, setQuestions] = useState<any>(1);
     
     useEffect(() => {
       setQuestions(data[questionNumber - 1]);
@@ -21,12 +20,13 @@ export const Cards = ({data, questionNumber, setQuestionNumber}: props) => {
                 {questions?.question}
             </div>
             <div className={styles.answers}>
+                
                 {/* set of questions */}
-                {questions?.answers.map((i:any)=>(
-                    <div className={i.key === 1 ? styles.answer1 : (
+                {questions?.answers?.map((i:any)=>(
+                    <div key={i.key} className={i.key === 1 ? styles.answer1 : (
                         i.key === 2 ? styles.answer2 : (
                             i.key === 3 ? styles.answer3 : (
-                                i.key === 4 && styles.answer4 
+                                i.key === 4 ? styles.answer4 : ''
                             )
                         )
                     )}>
