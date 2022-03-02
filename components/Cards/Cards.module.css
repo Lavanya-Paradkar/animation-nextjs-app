@@ -61,7 +61,7 @@
     border-radius: 9999px;
     border-color: #6231EC;
     margin-right: 20px;
-    animation: select 9s ease-out;
+    animation: select 8.9s ease-out;
     animation-iteration-count: infinite;
     animation-direction: backwards;
 
@@ -79,7 +79,7 @@
     font-size: 20px;
     font-weight: 600;
     margin-top: 15px;
-    animation: slideTop1 9s ease;
+    animation: slideTop1 8.9s ease;
     animation-iteration-count: infinite;
     animation-direction: backwards;
     z-index: 30;
@@ -97,7 +97,7 @@
     font-size: 20px;
     font-weight: 600;
     margin-top: 15px;
-    animation: slideTop2 9s ease;
+    animation: slideTop2 8.9s ease;
     animation-iteration-count: infinite;
     animation-direction: backwards;
     z-index: 30;
@@ -115,7 +115,7 @@
     font-size: 20px;
     font-weight: 600;
     margin-top: 15px;
-    animation: slideTop3 9s ease;
+    animation: slideTop3 8.9s ease;
     animation-iteration-count: infinite;
     animation-direction: backwards;
     z-index: 30;
@@ -133,7 +133,7 @@
     font-size: 20px;
     font-weight: 600;
     margin-top: 15px;
-    animation: slideTop4 9s ease;
+    animation: slideTop4 8.9s ease;
     animation-iteration-count: infinite;
     animation-direction: backwards;
     z-index: 30;
